@@ -23,31 +23,25 @@ public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     @Column(name = "codigo_producto")
-    private Integer codigoProducto;
+    private Long codigoProducto;
 
     @JoinColumn(name = "codigo_categoria", nullable = false)
     private Integer codigoCategoria;
 
     @JoinColumn(name = "doc_productor", nullable = false)
-    private Integer docProductor;
+    private Long docProductor;
 
     @Column(name = "nombre_producto", nullable = false, length = 100)
     private String nombreProducto;
 
-    @Column(name = "tipo_producto", length = 100)
-    private String tipoProducto;
-
-    @Column(name = "origen_producto")
+    @Column(name = "origen_producto", length = 200)
     private String origenProducto;
 
-    @Column(name = "unidad_precio", length = 10)
-    private String unidadPrecio;
-
-    @Column(name = "descripcion")
+    @Column(name = "descripcion", length = 500)
     private String descripcion;
 
-    @Column(name = "precio", nullable = false, precision = 10, scale = 2)
-    private BigDecimal precio;
+    @Column(name = "url_imagen", length = 1000)
+    private String urlImagen;
 
     @Column(name = "fecha_creacion", updatable = false)
     @CreatedDate
@@ -56,8 +50,5 @@ public class Producto {
     @Column(name = "fecha_actualizacion")
     @LastModifiedDate
     private LocalDateTime fechaActualizacion;
-
-    @Column(name = "url_imagen", length = 1000)
-    private String urlImagen;
 
 }

@@ -19,16 +19,13 @@ public class StockProducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_stock")
-    private int id;
+    private Long idStock;
 
     @JoinColumn(name = "codigo_producto")
-    private Integer codigoProducto;
+    private Long codigoProducto;
 
-    @Column(name = "cantidad_kg", precision = 10, scale = 2)
+    @Column(name = "cantidad_stock", precision = 10, scale = 2)
     private BigDecimal cantidadKg;
-
-    @Column(name = "peso_arroba", precision = 10, scale = 2)
-    private BigDecimal pesoArroba;
 
     @Column(name = "vende_kg")
     private Boolean vendeKg;
@@ -36,6 +33,6 @@ public class StockProducto {
     @Column(name = "vende_lb")
     private Boolean vendeLb;
 
-    @Column(name = "vende_arroba")
-    private Boolean vendeArroba;
+    @Column(name = "vende_tonelada")
+    private Boolean vendeTonelada;
 }

@@ -23,6 +23,6 @@ public class TipoDocumento {
     @Column(name = "nombre_documento", nullable = false, length = 100)
     private String nombreDocumento;
 
-    @Column(name = "uso_documento", nullable = false, length = 100)
-    private String usoDocumento;
+    @Column(name = "tipo_doc", nullable = false, length = 100)
+    private String tipoDoc;
 }

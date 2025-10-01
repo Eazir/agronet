@@ -13,13 +13,16 @@ import lombok.ToString;
 @ToString
 @Table(name = "usuario_consumidor")
 public class UsuarioConsumidor {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "doc_consumidor")
-    private Integer docConsumidor;
+    @Column(name = "doc_consumidor", nullable = false)
+    private Long docConsumidor;
 
     @JoinColumn(name = "codigo_doc", nullable = false)
     private Integer codigoDoc;
+
+    @Column(name = "tipo_usuario", nullable = false, length = 100)
+    private String tipoUsuario;
 
     @Column(name = "nombre_usuario", nullable = false, length = 100)
     private String nombreUsuario;
@@ -27,9 +30,6 @@ public class UsuarioConsumidor {
     @Column(name = "email", nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(name = "edad")
-    private Integer edad;
-
-    @Column(name = "contraseña", nullable = false, length = 255)
+    @Column(name = "contraseña", nullable = false, length = 100)
     private String contraseña;
 }
