@@ -22,11 +22,11 @@ public class Carrito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_carrito")
-    private Integer codigoCarrito;
+    private Long codigoCarrito;
 
-
-    @Column(name = "doc_consumidor", nullable = false)
-    private Integer docConsumidor;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "doc_consumidor", nullable = false)
+    private UsuarioConsumidor docConsumidor;
 
     @Column(name = "total_carrito", nullable = false,  precision = 10, scale = 2)
     private BigDecimal total_carrito;
@@ -36,6 +36,6 @@ public class Carrito {
     private LocalDateTime fechaCreacion;
 
     @OneToMany(mappedBy = "codigoCarrito")
-    private List<ProductoCarrito> productos;
+    private List<ProductoCarrito> productosCarrito;
 
 }

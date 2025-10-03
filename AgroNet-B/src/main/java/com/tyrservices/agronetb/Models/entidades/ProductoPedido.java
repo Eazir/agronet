@@ -18,17 +18,25 @@ public class ProductoPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_producto_pedido")
-    private Integer codigoProductoPedido;
+    private Long codigoProductoPedido;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "codigo_pedido", nullable = false)
-    private Integer codigoPedido;
+    private Pedido codigoPedido;
 
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "codigo_producto", nullable = false)
-    private Integer codigoProducto;
+    private Producto producto;
 
-    @Column(name = "cantidad", nullable = false)
+    @Column(name = "cantidad")
     private Integer cantidad;
 
     @Column(name = "precio_unitario", nullable = false, precision = 10, scale = 2)
     private BigDecimal precioUnitario;
+
+    @Column(name = "unidad_venta", nullable = false)
+    private String unidadVenta;
+
+    @Column(name = "subtotal", nullable = false, precision = 10, scale = 2 )
+    private BigDecimal subtotal;
 }

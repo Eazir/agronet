@@ -18,7 +18,7 @@ public class TipoDocumento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_doc")
-    private Integer codigoDoc;
+    private Long codigoDoc;
 
     @Column(name = "nombre_documento", nullable = false, length = 100)
     private String nombreDocumento;

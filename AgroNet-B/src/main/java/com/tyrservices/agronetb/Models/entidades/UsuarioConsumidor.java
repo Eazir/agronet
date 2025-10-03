@@ -18,8 +18,9 @@ public class UsuarioConsumidor {
     @Column(name = "doc_consumidor", nullable = false)
     private Long docConsumidor;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "codigo_doc", nullable = false)
-    private Integer codigoDoc;
+    private TipoDocumento codigoDoc;
 
     @Column(name = "tipo_usuario", nullable = false, length = 100)
     private String tipoUsuario;

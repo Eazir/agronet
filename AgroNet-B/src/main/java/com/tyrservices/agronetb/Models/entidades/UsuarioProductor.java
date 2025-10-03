@@ -18,8 +18,9 @@ public class UsuarioProductor {
     @Column(name = "doc_productor", nullable = false)
     private Long docProductor;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "codigo_doc", nullable = false)
-    private Integer codigoDoc;
+    private TipoDocumento codigoDoc;
 
     @Column(name = "tipo_usuario", nullable = false, length = 100)
     private String tipoUsuario;

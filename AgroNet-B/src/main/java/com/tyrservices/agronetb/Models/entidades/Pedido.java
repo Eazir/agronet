@@ -18,22 +18,20 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_pedido")
-    private Integer codigoPedido;
+    private Long codigoPedido;
 
-    @JoinColumn(name = "codigo_carrito", nullable = false)
-    private Integer codigoCarrito;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "doc_consumidor", nullable = false)
+    private UsuarioConsumidor userConsumidor;
 
-    @Column(name = "nombre_usuario", nullable = false, length = 100)
-    private String nombreUsuario;
-
-    @Column(name = "direccion_residencia", nullable = false, length = 255)
-    private String direccionResidencia;
-
-    @Column(name = "fecha_pedido")
-    private LocalDateTime fechaPedido;
+    @Column(name = "direccion_entrega", nullable = false, length = 300)
+    private String direccionEntrega;
 
     @Column(name = "estado", length = 50)
     private String estado = "pendiente";
+
+    @Column(name = "fecha_pedido")
+    private LocalDateTime fechaPedido;
 
     @OneToMany(mappedBy = "codigoPedido")
     private List<ProductoPedido> productos;

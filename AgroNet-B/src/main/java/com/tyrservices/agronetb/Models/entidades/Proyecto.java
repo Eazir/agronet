@@ -11,7 +11,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -20,14 +19,15 @@ import java.util.List;
 @ToString
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "proyectos")
-public class Proyectos {
+public class Proyecto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_proyecto")
-    private Integer codigoProyecto;
+    private Long codigoProyecto;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doc_productor", nullable = false)
-    private Integer docProductor;
+    private UsuarioProductor docProductor;
 
     @Column(name = "nombre_proyecto", nullable = false, length = 100)
     private String nombreProyecto;
@@ -44,6 +44,9 @@ public class Proyectos {
     @Column(name = "donaciones_recibidas")
     private Integer donacionesRecibidas;
 
+    @Column(name = "url_imagen", length = 1000)
+    private String urlImagen;
+
     @Column(name = "fecha_creacion", updatable = false)
     @CreatedDate
     private LocalDateTime fechaCreacion;
@@ -52,9 +55,4 @@ public class Proyectos {
     @LastModifiedDate
     private LocalDateTime fechaActualizacion;
 
-    @Column(name = "url_imagen", length = 1000)
-    private String urlImagen;
-
-    @OneToMany(mappedBy = "codigoProyecto")
-    private List<Donaciones> donacionesList;
 }

@@ -19,12 +19,13 @@ public class ProductoCarrito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_producto_carrito")
-    private Integer codigoProductoCarrito;
+    private Long codigoProductoCarrito;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "codigo_carrito", nullable = false)
-    private Integer codigoCarrito;
+    private Carrito codigoCarrito;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "codigo_producto", nullable = false)
     private Producto producto;
 

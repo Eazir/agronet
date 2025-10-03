@@ -13,10 +13,11 @@ import lombok.ToString;
 @ToString
 @Table(name = "categoria_productos")
 public class CategoriaProducto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_categoria")
-    private Integer codigoCategoria;
+    private Long codigoCategoria;
 
     @Column(name = "nombre_categoria", nullable = false, length = 100)
     private String nombreCategoria;

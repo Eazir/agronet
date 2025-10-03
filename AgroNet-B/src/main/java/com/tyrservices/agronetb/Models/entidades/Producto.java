@@ -25,11 +25,13 @@ public class Producto {
     @Column(name = "codigo_producto")
     private Long codigoProducto;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "codigo_categoria", nullable = false)
-    private Integer codigoCategoria;
+    private CategoriaProducto codigoCategoria;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doc_productor", nullable = false)
-    private Long docProductor;
+    private UsuarioProductor docProductor;
 
     @Column(name = "nombre_producto", nullable = false, length = 100)
     private String nombreProducto;
