@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8310037b-193f-499d-8ff3-bd0ee7f9c388" name="Changes" comment="Proyecto en blanco">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd48636d-4acd-433c-b21e-ebe10f0d5fa6.xml" beforeDir="false" />
+    <list default="true" id="8310037b-193f-499d-8ff3-bd0ee7f9c388" name="Changes" comment="Modificacion de entidades:&#10;se corrigieron las relaciones entre tablas, se especifico el:">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd48636d-4acd-433c-b21e-ebe10f0d5fa6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd48636d-4acd-433c-b21e-ebe10f0d5fa6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Carrito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/CategoriaProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/CategoriaProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Donaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Donaciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoCarrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoCarrito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Proyectos.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Proyecto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/StockProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/StockProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/TipoDocumento.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/TipoDocumento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioConsumidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioConsumidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioProductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioProductor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Features/entidades" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +47,13 @@
     &quot;accountId&quot;: &quot;bbab4e0a-dc28-4204-a9a2-5244d78158cb&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -44,13 +66,18 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.AgroNetBApplication.executor&quot;: &quot;Run&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Features/entidades&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/INFO-PC/Documentos/Univesidad/Semestre 6/Software 2/AgroNet&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/INFO-PC/Documentos/Univesidad/Semestre 6/Software 2/AgroNet/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -64,6 +91,14 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Models" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tyrservices.agronetb.Models.entidades" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="AgroNetBApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -77,8 +112,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
+        <option value="bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18" />
       </set>
     </attachedChunks>
   </component>
@@ -92,6 +127,22 @@
       <updated>1758844637451</updated>
       <workItem from="1758844638527" duration="59000" />
       <workItem from="1758844725915" duration="584000" />
+      <workItem from="1759005580379" duration="2083000" />
+      <workItem from="1759264657131" duration="447000" />
+      <workItem from="1759265575898" duration="3116000" />
+      <workItem from="1759279320731" duration="2338000" />
+      <workItem from="1759287356235" duration="2133000" />
+      <workItem from="1759325744128" duration="1403000" />
+      <workItem from="1759348512549" duration="1797000" />
+      <workItem from="1759350610997" duration="553000" />
+      <workItem from="1759351289796" duration="1332000" />
+      <workItem from="1759352855351" duration="2075000" />
+      <workItem from="1759366867547" duration="801000" />
+      <workItem from="1759377273875" duration="142000" />
+      <workItem from="1759409565774" duration="3060000" />
+      <workItem from="1759413648990" duration="1781000" />
+      <workItem from="1759446994224" duration="1592000" />
+      <workItem from="1759501143470" duration="3296000" />
     </task>
     <task id="LOCAL-00001" summary="Proyecto en blanco">
       <option name="closed" value="true" />
@@ -101,7 +152,31 @@
       <option name="project" value="LOCAL" />
       <updated>1758844940141</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="prueba actualizacion de ramas">
+      <option name="closed" value="true" />
+      <created>1758846364816</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758846364816</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Importacion de entidades y DTOs">
+      <option name="closed" value="true" />
+      <created>1759275689553</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759275689553</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Modificacion de entidades:&#10;- CategoriaProducto&#10;- Producto&#10;- StockProducto&#10;- TipoDocumento&#10;- Usuarios&#10;&#10;Se modificarion tipos de datos, se eliminaron y agregaron datos en las entidades referentes a productos">
+      <option name="closed" value="true" />
+      <created>1759354528240</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759354528240</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +195,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Proyecto en blanco" />
-    <option name="LAST_COMMIT_MESSAGE" value="Proyecto en blanco" />
+    <MESSAGE value="prueba actualizacion de ramas" />
+    <MESSAGE value="Importacion de entidades y DTOs" />
+    <MESSAGE value="Modificacion de entidades:&#10;- CategoriaProducto&#10;- Producto&#10;- StockProducto&#10;- TipoDocumento&#10;- Usuarios&#10;&#10;Se modificarion tipos de datos, se eliminaron y agregaron datos en las entidades referentes a productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificacion de entidades:&#10;- CategoriaProducto&#10;- Producto&#10;- StockProducto&#10;- TipoDocumento&#10;- Usuarios&#10;&#10;Se modificarion tipos de datos, se eliminaron y agregaron datos en las entidades referentes a productos" />
   </component>
 </project>
