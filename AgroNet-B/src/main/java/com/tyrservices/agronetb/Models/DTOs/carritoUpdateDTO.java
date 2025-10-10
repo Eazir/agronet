@@ -10,5 +10,5 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class carritoUpdateDTO {
-    BigDecimal total;
+    private BigDecimal total;
 }

@@ -4,47 +4,87 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8310037b-193f-499d-8ff3-bd0ee7f9c388" name="Changes" comment="Modificacion de entidades:&#10;se corrigieron las relaciones entre tablas, se especifico el:">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="8310037b-193f-499d-8ff3-bd0ee7f9c388" name="Changes" comment="Modificacion de entidades:&#10;se corrigieron las relaciones entre tablas, se especifico el: @ManyToOne(fetch = FetchType.LAZY)&#10;&#10;la migracion ya esta correcta y las entidades y relaciones se crearon correctamente en la base de datos">
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Configs/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/CarritoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/PedidoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/ProductoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/ProyectosController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/UsuarioDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/CarritoCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/CategoriaProductoCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/DonacionesCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/PedidoCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/ProductoCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/ProductoPedidoCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/ProductosCarritoCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/ProyectoCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/StockProductoCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/TipoDocumentoCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/UsuarioConsumidorCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/UsuarioProductorCrudRep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/CarritoService/CarritoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/CarritoService/CarritoServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProductosService/ProductoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProductosService/ProductoServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProyectosService/ProyectoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProyectosService/ProyectoServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd48636d-4acd-433c-b21e-ebe10f0d5fa6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd48636d-4acd-433c-b21e-ebe10f0d5fa6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Carrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/CategoriaProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/CategoriaProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Donaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Donaciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoCarrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoCarrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoPedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Proyectos.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Proyecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/StockProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/StockProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/TipoDocumento.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/TipoDocumento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioConsumidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioConsumidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioProductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioProductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/carritoUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/carritoUpdateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/productosCarritoUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/productosCarritoUpdateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Features/entidades" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Eazir&quot;
+    &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Eazir/agronet.git&quot;,
     &quot;accountId&quot;: &quot;bbab4e0a-dc28-4204-a9a2-5244d78158cb&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;Eazir&quot;,
+    &quot;repository&quot;: &quot;agronet&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -58,7 +98,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="33DHHpr0CWdOAY5YGxUWS9vHuet" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,23 +108,27 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.AgroNetBApplication.executor&quot;: &quot;Run&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Features/entidades&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Features/Services&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/INFO-PC/Documentos/Univesidad/Semestre 6/Software 2/AgroNet/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/INFO-PC/Documentos/Univesidad/Semestre 6/Software 2/AgroNet/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProyectosService&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -93,9 +139,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Services\ProyectosService" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Services\ProductosService" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Services\CarritoService" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Repositorys" />
       <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Models" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\static" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tyrservices.agronetb.Controllers" />
+      <recent name="com.tyrservices.agronetb.Configs" />
       <recent name="com.tyrservices.agronetb.Models.entidades" />
     </key>
   </component>
@@ -112,8 +167,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
@@ -143,6 +198,18 @@
       <workItem from="1759413648990" duration="1781000" />
       <workItem from="1759446994224" duration="1592000" />
       <workItem from="1759501143470" duration="3296000" />
+      <workItem from="1759539274364" duration="108000" />
+      <workItem from="1759539651929" duration="626000" />
+      <workItem from="1759610372841" duration="466000" />
+      <workItem from="1759780815760" duration="2607000" />
+      <workItem from="1759800673679" duration="4073000" />
+      <workItem from="1760018649312" duration="458000" />
+      <workItem from="1760019739711" duration="342000" />
+      <workItem from="1760026679822" duration="1250000" />
+      <workItem from="1760038239361" duration="1097000" />
+      <workItem from="1760039750873" duration="7077000" />
+      <workItem from="1760050159916" duration="1058000" />
+      <workItem from="1760106711223" duration="552000" />
     </task>
     <task id="LOCAL-00001" summary="Proyecto en blanco">
       <option name="closed" value="true" />

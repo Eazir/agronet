@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.math.BigDecimal;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,4 +14,7 @@ import lombok.ToString;
 @ToString
 public class productosCarritoUpdateDTO {
     private Integer cantidad;
+    private String unidadVenta;
+    private BigDecimal precioUnitario;
+    private BigDecimal subtotal;
 }

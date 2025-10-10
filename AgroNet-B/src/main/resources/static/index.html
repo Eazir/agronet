@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroNet - Conectando Productores y Consumidores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'agro-primary': '#0e4a56',
+                        'agro-secondary': '#0d6971',
+                        'agro-accent': '#0a9798',
+                        'agro-highlight': '#06d9cc',
+                        'agro-light': '#0ffff7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+<!-- Menú de Navegación -->
+<nav class="bg-agro-primary shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="/static" class="text-white font-bold text-2xl flex items-center">
+                    <i class="fas fa-seedling text-agro-light mr-2"></i>
+                    AgroNet
+                </a>
+            </div>
+
+            <!-- Menú para desktop -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="/static" class="text-agro-light hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-home mr-1"></i> Inicio
+                    </a>
+                    <a href="/productos" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-apple-alt mr-1"></i> Productos
+                    </a>
+                    <a href="/proyectos" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-hand-holding-heart mr-1"></i> Proyectos
+                    </a>
+                    <a href="/carrito" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-shopping-cart mr-1"></i> Carrito
+                    </a>
+                    <a href="/pedidos" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-clipboard-list mr-1"></i> Pedidos
+                    </a>
+                    <a href="/panel" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-user-circle mr-1"></i> Mi Panel
+                    </a>
+                </div>
+            </div>
+
+            <!-- Botón móvil -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white hover:text-agro-light focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="md:hidden hidden bg-agro-secondary">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="/static" class="text-agro-light block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-home mr-2"></i> Inicio
+            </a>
+            <a href="/productos" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-apple-alt mr-2"></i> Productos
+            </a>
+            <a href="/proyectos" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-hand-holding-heart mr-2"></i> Proyectos
+            </a>
+            <a href="/carrito" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-shopping-cart mr-2"></i> Carrito
+            </a>
+            <a href="/pedidos" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-clipboard-list mr-2"></i> Pedidos
+            </a>
+            <a href="/panel" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-user-circle mr-2"></i> Mi Panel
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-agro-primary to-agro-accent text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Conectamos el <span class="text-agro-light">campo</span> con tu mesa
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+            Una plataforma donde los productores venden directamente a los consumidores,
+            eliminando intermediarios y garantizando precios justos para todos.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="/productos" class="bg-agro-light text-agro-primary font-bold py-3 px-8 rounded-lg hover:bg-white transition duration-300 transform hover:scale-105">
+                <i class="fas fa-shopping-basket mr-2"></i> Comprar Productos
+            </a>
+            <a href="/proyectos" class="bg-transparent border-2 border-agro-light text-agro-light font-bold py-3 px-8 rounded-lg hover:bg-agro-light hover:text-agro-primary transition duration-300">
+                <i class="fas fa-hand-holding-usd mr-2"></i> Apoyar Proyectos
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Beneficios -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-agro-primary mb-12">¿Por qué AgroNet?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center p-6 rounded-lg bg-gray-50 hover:shadow-lg transition duration-300">
+                <div class="w-16 h-16 bg-agro-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-users text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-agro-secondary mb-3">Sin Intermediarios</h3>
+                <p class="text-gray-600">Los productores reciben el valor justo por su trabajo y los consumidores pagan precios más accesibles.</p>
+            </div>
+            <div class="text-center p-6 rounded-lg bg-gray-50 hover:shadow-lg transition duration-300">
+                <div class="w-16 h-16 bg-agro-highlight rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-leaf text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-agro-secondary mb-3">Productos Frescos</h3>
+                <p class="text-gray-600">Accede directamente a productos del campo, frescos y de alta calidad, recién cosechados.</p>
+            </div>
+            <div class="text-center p-6 rounded-lg bg-gray-50 hover:shadow-lg transition duration-300">
+                <div class="w-16 h-16 bg-agro-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-handshake text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-agro-secondary mb-3">Comunidad Sostenible</h3>
+                <p class="text-gray-600">Apoya la agricultura local y contribuye a un sistema alimentario más justo y sostenible.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Proyectos Impulsadores -->
+<section class="py-16 bg-gradient-to-br from-agro-secondary to-agro-primary text-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <h2 class="text-3xl font-bold mb-6">Proyectos Impulsadores</h2>
+                <p class="text-lg mb-6">
+                    Los <span class="font-semibold text-agro-light">Proyectos Impulsadores</span> son iniciativas de nuestros productores
+                    que buscan financiamiento colectivo para mejorar sus cultivos, adquirir equipos,
+                    expandir sus operaciones o implementar prácticas agrícolas sostenibles.
+                </p>
+                <p class="text-lg mb-6">
+                    Como consumidor, puedes convertirte en patrocinador de estos proyectos y recibir
+                    recompensas exclusivas mientras ayudas a impulsar la agricultura local.
+                </p>
+                <a href="/proyectos" class="inline-block bg-agro-light text-agro-primary font-bold py-3 px-6 rounded-lg hover:bg-white transition duration-300">
+                    <i class="fas fa-rocket mr-2"></i> Descubre Proyectos
+                </a>
+            </div>
+            <div class="md:w-1/2">
+                <div class="bg-white rounded-lg p-6 text-agro-primary shadow-xl">
+                    <h3 class="text-xl font-bold mb-4 text-agro-secondary">¿Cómo funcionan?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-lightbulb text-agro-highlight mt-1 mr-3"></i>
+                            <span>Los productores presentan sus ideas y necesidades de financiamiento</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hand-holding-usd text-agro-highlight mt-1 mr-3"></i>
+                            <span>La comunidad apoya con donaciones a cambio de recompensas especiales</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chart-line text-agro-highlight mt-1 mr-3"></i>
+                            <span>Los proyectos exitosos se implementan y benefician a toda la comunidad</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-agro-highlight mt-1 mr-3"></i>
+                            <span>Los patrocinadores reciben sus recompensas y ven el impacto de su apoyo</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="py-16 bg-agro-light">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-agro-primary mb-6">Únete a la Revolución AgroNet</h2>
+        <p class="text-xl text-agro-secondary mb-8 max-w-3xl mx-auto">
+            Ya seas productor buscando llegar directamente a tus clientes o consumidor
+            interesado en productos frescos y apoyar la agricultura local, AgroNet es tu plataforma.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="/registro" class="bg-agro-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-agro-secondary transition duration-300">
+                <i class="fas fa-user-plus mr-2"></i> Regístrate Gratis
+            </a>
+            <a href="/acerca" class="bg-transparent border-2 border-agro-primary text-agro-primary font-bold py-3 px-8 rounded-lg hover:bg-agro-primary hover:text-white transition duration-300">
+                <i class="fas fa-info-circle mr-2"></i> Conoce Más
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-agro-primary text-white py-8">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <a href="/static" class="text-white font-bold text-2xl flex items-center">
+                    <i class="fas fa-seedling text-agro-light mr-2"></i>
+                    AgroNet
+                </a>
+                <p class="text-agro-light mt-2">Conectando el campo con tu mesa</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-white hover:text-agro-light transition duration-300">
+                    <i class="fab fa-facebook text-xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-agro-light transition duration-300">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-agro-light transition duration-300">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-agro-secondary mt-6 pt-6 text-center text-sm text-agro-light">
+            <p>&copy; 2023 AgroNet. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Script para el menú móvil -->
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
