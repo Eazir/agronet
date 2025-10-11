@@ -4,40 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8310037b-193f-499d-8ff3-bd0ee7f9c388" name="Changes" comment="Modificacion de entidades:&#10;se corrigieron las relaciones entre tablas, se especifico el: @ManyToOne(fetch = FetchType.LAZY)&#10;&#10;la migracion ya esta correcta y las entidades y relaciones se crearon correctamente en la base de datos">
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Configs/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/CarritoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/PedidoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/ProductoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/ProyectosController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/UsuarioController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/UsuarioDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/CarritoCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/CategoriaProductoCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/DonacionesCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/PedidoCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/ProductoCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/ProductoPedidoCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/ProductosCarritoCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/ProyectoCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/StockProductoCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/TipoDocumentoCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/UsuarioConsumidorCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/UsuarioProductorCrudRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/CarritoService/CarritoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/CarritoService/CarritoServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProductosService/ProductoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProductosService/ProductoServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProyectosService/ProyectoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProyectosService/ProyectoServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="8310037b-193f-499d-8ff3-bd0ee7f9c388" name="Changes" comment="- Ajuste de repositorys&#10;- Se importaron Controllers&#10;- Se importaron servicios&#10;- se creo la home page (index)">
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Consumidor/loginC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Consumidor/registroC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Productor/loginP.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Productor/registroP.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/auth.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/enCosntruccion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd48636d-4acd-433c-b21e-ebe10f0d5fa6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd48636d-4acd-433c-b21e-ebe10f0d5fa6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AgroNet-B/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/carritoUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/carritoUpdateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/productosCarritoUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/productosCarritoUpdateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Configs/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Configs/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/PedidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/TipoDocumento.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/TipoDocumento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/UsuarioProductorCrudRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/UsuarioProductorCrudRep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +32,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,7 +86,6 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
@@ -118,16 +101,17 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.AgroNetBApplication.executor&quot;: &quot;Run&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Features/Services&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Features/Services-Interfaces&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/INFO-PC/Documentos/Univesidad/Semestre 6/Software 2/AgroNet/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/ProyectosService&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/INFO-PC/Documentos/Univesidad/Semestre 6/Software 2/AgroNet/AgroNet-B/src/main/resources/templates/Productor&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -139,13 +123,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\templates\Productor" />
       <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Services\ProyectosService" />
       <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Services\ProductosService" />
       <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Services\CarritoService" />
       <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Repositorys" />
-      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\templates\consumidor" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\templates" />
       <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -209,7 +195,11 @@
       <workItem from="1760038239361" duration="1097000" />
       <workItem from="1760039750873" duration="7077000" />
       <workItem from="1760050159916" duration="1058000" />
-      <workItem from="1760106711223" duration="552000" />
+      <workItem from="1760106711223" duration="9980000" />
+      <workItem from="1760122067871" duration="619000" />
+      <workItem from="1760122700293" duration="9802000" />
+      <workItem from="1760136426970" duration="6315000" />
+      <workItem from="1760145805064" duration="6965000" />
     </task>
     <task id="LOCAL-00001" summary="Proyecto en blanco">
       <option name="closed" value="true" />
@@ -243,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759354528240</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Ajuste de repositorys&#10;- Se importaron Controllers&#10;- Se importaron servicios&#10;- se creo la home page (index)">
+      <option name="closed" value="true" />
+      <created>1760108093082</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760108093082</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +263,11 @@
     <MESSAGE value="prueba actualizacion de ramas" />
     <MESSAGE value="Importacion de entidades y DTOs" />
     <MESSAGE value="Modificacion de entidades:&#10;- CategoriaProducto&#10;- Producto&#10;- StockProducto&#10;- TipoDocumento&#10;- Usuarios&#10;&#10;Se modificarion tipos de datos, se eliminaron y agregaron datos en las entidades referentes a productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificacion de entidades:&#10;- CategoriaProducto&#10;- Producto&#10;- StockProducto&#10;- TipoDocumento&#10;- Usuarios&#10;&#10;Se modificarion tipos de datos, se eliminaron y agregaron datos en las entidades referentes a productos" />
+    <MESSAGE value="- Ajuste de repositorys&#10;- Se importaron Controllers&#10;- Se importaron servicios&#10;- se creo la home page (index)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Ajuste de repositorys&#10;- Se importaron Controllers&#10;- Se importaron servicios&#10;- se creo la home page (index)" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
