@@ -235,7 +235,7 @@
         <div class="mt-6 pt-6 border-t border-gray-200">
             <p class="text-center text-gray-600 text-sm">
                 ¿Ya tienes una cuenta?
-                <a href="/login" class="text-agro-accent font-semibold hover:text-agro-primary transition duration-300 ml-1">
+                <a th:href="@{/LoginProductor}" class="text-agro-accent font-semibold hover:text-agro-primary transition duration-300 ml-1">
                     Inicia sesión aquí
                 </a>
             </p>
@@ -244,7 +244,7 @@
 
     <!-- Enlace de regreso al home -->
     <div class="text-center mt-6">
-        <a href="/" class="text-agro-accent hover:text-agro-primary transition duration-300 flex items-center justify-center">
+        <a th:href="@{/AgroNet}" class="text-agro-accent hover:text-agro-primary transition duration-300 flex items-center justify-center">
             <i class="fas fa-arrow-left mr-2"></i>Volver al inicio
         </a>
     </div>
