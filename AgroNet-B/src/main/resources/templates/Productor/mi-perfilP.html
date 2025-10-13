@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - AgroNet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'agro-primary': '#0e4a56',
+                        'agro-secondary': '#0d6971',
+                        'agro-accent': '#0a9798',
+                        'agro-highlight': '#06d9cc',
+                        'agro-light': '#0ffff7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<!-- Menú de Navegación -->
+<nav class="bg-agro-primary shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a th:href="@{/AgroNet}" class="text-white font-bold text-2xl flex items-center">
+                    <i class="fas fa-seedling text-agro-light mr-2"></i>
+                    AgroNet
+                </a>
+            </div>
+
+            <!-- Menú desktop -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a th:href="@{/AgroNet}" class="text-agro-light hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-home mr-1"></i> Inicio
+                    </a>
+                    <a th:href="@{/panel-control}" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-tachometer-alt mr-1"></i> Panel
+                    </a>
+                    <a th:href="@{/logout{tipo}(tipo = ${tipo})}" class="text-white hover:bg-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-sign-out-alt mr-1"></i> Cerrar Sesión
+                    </a>
+                </div>
+            </div>
+
+            <!-- Botón móvil -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white hover:text-agro-light focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="md:hidden hidden bg-agro-secondary">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a th:href="@{/static}" class="text-agro-light block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-home mr-2"></i> Inicio
+            </a>
+            <a th:href="@{/panel-control}" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-tachometer-alt mr-2"></i> Panel
+            </a>
+            <a th:href="@{/logout}" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-sign-out-alt mr-2"></i> Cerrar Sesión
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido Principal -->
+<div class="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div class="mb-4 sm:mb-0">
+                <h1 class="text-2xl sm:text-3xl font-bold text-agro-primary">
+                    <i class="fas fa-user-cog mr-3"></i>Mi Perfil
+                </h1>
+                <p class="text-agro-secondary mt-2">Gestiona tu información personal y configuración de cuenta</p>
+            </div>
+            <div class="bg-agro-light text-agro-primary px-4 py-2 rounded-full">
+                <i class="fas fa-user-tie mr-2"></i>Productor
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Menú Lateral -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <nav class="space-y-2">
+                    <a href="#informacion-personal" class="flex items-center px-3 py-2 text-agro-primary bg-agro-light rounded-lg font-medium">
+                        <i class="fas fa-user mr-3"></i>Información Personal
+                    </a>
+                    <a href="#seguridad" class="flex items-center px-3 py-2 text-gray-600 hover:text-agro-primary hover:bg-gray-50 rounded-lg transition duration-300">
+                        <i class="fas fa-lock mr-3"></i>Seguridad
+                    </a>
+                    <a href="#preferencias" class="flex items-center px-3 py-2 text-gray-600 hover:text-agro-primary hover:bg-gray-50 rounded-lg transition duration-300">
+                        <i class="fas fa-cog mr-3"></i>Preferencias
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Formulario de Edición -->
+        <div class="lg:col-span-2">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <form th:action="@{/actualizar-perfil}" method="post" th:object="${usuario}">
+                    <input type="hidden" th:field="*{docProductor}" />
+
+                    <!-- Información Personal -->
+                    <div id="informacion-personal">
+                        <h3 class="text-lg font-semibold text-agro-primary mb-4 flex items-center">
+                            <i class="fas fa-user mr-2"></i>Información Personal
+                        </h3>
+
+                        <!-- Tipo de Persona -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-user-tag mr-2 text-agro-accent"></i>Tipo de Persona
+                            </label>
+                            <select th:field="*{tipoUsuario}"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300">
+                                <option value="natural">Persona Natural</option>
+                                <option value="juridica">Persona Jurídica</option>
+                            </select>
+                        </div>
+
+                        <!-- Documento -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    <i class="fas fa-id-card mr-2 text-agro-accent"></i>Tipo de Documento
+                                </label>
+                                <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight
+                                    focus:border-transparent transition duration-300"
+                                       disabled
+                                       th:value="${tipoDocumento}">
+                                </input>
+                                <p class="text-xs text-gray-500 mt-1">El documento no se puede modificar</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    <i class="fas fa-hashtag mr-2 text-agro-accent"></i>Número de Documento
+                                </label>
+                                <input type="text"
+                                       th:value="${userId}"
+                                       disabled
+                                       class="w-full px-4 py-3 border border-gray-300 bg-gray-100 rounded-lg text-gray-500">
+                                <p class="text-xs text-gray-500 mt-1">El documento no se puede modificar</p>
+                            </div>
+                        </div>
+
+                        <!-- Nombre de Usuario -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-user mr-2 text-agro-accent"></i>Nombre de Usuario
+                            </label>
+                            <input type="text"
+                                   th:field="*{nombreUsuario}"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300"
+                                   placeholder="Tu nombre de usuario">
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-envelope mr-2 text-agro-accent"></i>Correo Electrónico
+                            </label>
+                            <input type="email"
+                                   th:field="*{email}"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300"
+                                   placeholder="tu@email.com">
+                        </div>
+                    </div>
+
+                    <!-- Cambio de Contraseña -->
+                    <div id="seguridad" class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-lg font-semibold text-agro-primary mb-4 flex items-center">
+                            <i class="fas fa-lock mr-2"></i>Cambiar Contraseña
+                        </h3>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-lock mr-2 text-agro-accent"></i>Contraseña Actual
+                            </label>
+                            <div class="relative">
+                                <input type="password"
+                                       name="currentPassword"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300 pr-12"
+                                       placeholder="Ingresa tu contraseña actual">
+                                <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-agro-primary">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    <i class="fas fa-key mr-2 text-agro-accent"></i>Nueva Contraseña
+                                </label>
+                                <div class="relative">
+                                    <input type="password"
+                                           name="newPassword"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300 pr-12"
+                                           placeholder="Nueva contraseña">
+                                    <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-agro-primary">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    <i class="fas fa-key mr-2 text-agro-accent"></i>Confirmar Contraseña
+                                </label>
+                                <div class="relative">
+                                    <input type="password"
+                                           name="confirmPassword"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300 pr-12"
+                                           placeholder="Confirmar contraseña">
+                                    <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-agro-primary">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row gap-4">
+                        <button type="submit"
+                                class="bg-gradient-to-r from-agro-primary to-agro-accent text-white py-3 px-6 rounded-lg font-semibold hover:from-agro-secondary hover:to-agro-highlight transition duration-300 flex-1">
+                            <i class="fas fa-save mr-2"></i>Guardar Cambios
+                        </button>
+                        <a th:href="@{/panel-control}"
+                           class="bg-gray-200 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-300 transition duration-300 text-center">
+                            <i class="fas fa-times mr-2"></i>Cancelar
+                        </a>
+                    </div>
+
+                    <!-- Mensajes -->
+                    <div th:if="${param.success}" class="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                        <p class="text-green-700 text-sm flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Perfil actualizado correctamente.
+                        </p>
+                    </div>
+                    <div th:if="${param.error}" class="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                        <p class="text-red-700 text-sm flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            <span th:text="${param.error}">Error al actualizar el perfil.</span>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para el menú móvil -->
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+
+    // Mostrar/ocultar contraseñas
+    document.querySelectorAll('button').forEach(button => {
+        if (button.innerHTML.includes('fa-eye')) {
+            button.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('input');
+                const icon = this.querySelector('i');
+
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        }
+    });
+
+    // Validación de contraseñas en frontend
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const newPassword = document.querySelector('input[name="newPassword"]').value;
+        const confirmPassword = document.querySelector('input[name="confirmPassword"]').value;
+
+        if (newPassword !== confirmPassword) {
+            e.preventDefault();
+            alert('Las contraseñas no coinciden. Por favor, verifica.');
+            document.querySelector('input[name="confirmPassword"]').focus();
+        }
+
+        if (newPassword.length < 6) {
+            e.preventDefault();
+            alert('La contraseña debe tener al menos 6 caracteres.');
+            document.querySelector('input[name="newPassword"]').focus();
+        }
+    });
+</script>
+</body>
+</html>

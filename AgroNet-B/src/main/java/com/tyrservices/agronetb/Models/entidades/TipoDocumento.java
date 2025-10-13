@@ -21,7 +21,7 @@ public class TipoDocumento {
     private Long codigoDoc;
 
     @Column(name = "nombre_documento", nullable = false, length = 100)
-    private String nombreDocumento;
+    private String nombreDoc;
 
     @Column(name = "tipo_doc", nullable = false, length = 100)
     private String tipoDoc;

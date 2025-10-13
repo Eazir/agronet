@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página en Construcción - AgroNet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'agro-primary': '#0e4a56',
+                        'agro-secondary': '#0d6971',
+                        'agro-accent': '#0a9798',
+                        'agro-highlight': '#06d9cc',
+                        'agro-light': '#0ffff7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .floating { animation: float 3s ease-in-out infinite; }
+        .spin-slow { animation: spin-slow 8s linear infinite; }
+        .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-agro-primary via-agro-secondary to-agro-accent min-h-screen flex items-center justify-center font-sans overflow-hidden">
+<!-- Elementos decorativos de fondo -->
+<div class="absolute inset-0 overflow-hidden">
+    <!-- Iconos flotantes -->
+    <i class="fas fa-tractor text-agro-light/10 text-6xl absolute top-1/4 left-1/6 floating"></i>
+    <i class="fas fa-seedling text-agro-highlight/10 text-8xl absolute top-1/3 right-1/5 spin-slow"></i>
+    <i class="fas fa-leaf text-agro-light/10 text-5xl absolute bottom-1/4 left-1/3 floating" style="animation-delay: -1.5s;"></i>
+    <i class="fas fa-wheat-alt text-agro-highlight/10 text-7xl absolute top-2/3 right-1/4 spin-slow" style="animation-duration: 12s;"></i>
+    <i class="fas fa-cloud text-agro-light/10 text-6xl absolute bottom-1/3 left-1/5 floating" style="animation-delay: -2.5s;"></i>
+</div>
+
+<!-- Contenido principal -->
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+    <!-- Icono principal animado -->
+    <div class="mb-8 relative">
+        <div class="w-32 h-32 bg-gradient-to-r from-agro-light to-agro-highlight rounded-full flex items-center justify-center mx-auto shadow-2xl pulse-glow">
+            <i class="fas fa-tools text-agro-primary text-5xl"></i>
+        </div>
+        <div class="absolute -top-2 -right-2">
+            <i class="fas fa-hammer text-agro-light text-3xl floating"></i>
+        </div>
+        <div class="absolute -bottom-2 -left-2">
+            <i class="fas fa-screwdriver text-agro-highlight text-3xl floating" style="animation-delay: -1s;"></i>
+        </div>
+    </div>
+
+    <!-- Título principal -->
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-agro-light to-agro-highlight">
+                ¡En Construcción!
+            </span>
+    </h1>
+
+    <!-- Subtítulo -->
+    <p class="text-xl md:text-2xl text-agro-light mb-8 leading-relaxed">
+        Estamos cultivando algo <span class="font-semibold text-white">especial</span> para ti
+    </p>
+
+    <!-- Mensaje descriptivo -->
+    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-agro-light/20">
+        <p class="text-lg text-white mb-4">
+            <i class="fas fa-clock text-agro-light mr-2"></i>
+            Nuestros agricultores digitales están trabajando arduamente para preparar esta sección.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-sm text-agro-light">
+            <div class="flex items-center">
+                <i class="fas fa-check-circle text-agro-highlight mr-2"></i>
+                <span>Siembra de código</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-check-circle text-agro-highlight mr-2"></i>
+                <span>Riego de funcionalidades</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-seedling text-agro-highlight mr-2"></i>
+                <span>Cosecha próxima</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de progreso simbólica -->
+    <div class="w-full bg-agro-primary/30 rounded-full h-4 mb-8 overflow-hidden">
+        <div class="bg-gradient-to-r from-agro-highlight to-agro-light h-full rounded-full relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+        </div>
+    </div>
+
+    <!-- Contador simulado -->
+    <div class="flex justify-center items-center space-x-6 mb-8 text-white">
+        <div class="text-center">
+            <div class="text-2xl font-bold text-agro-light">99%</div>
+            <div class="text-sm">Completado</div>
+        </div>
+    </div>
+
+    <!-- Botón de volver -->
+    <div class="space-y-4">
+        <button onclick="history.back()"
+                class="group bg-white text-agro-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-agro-light hover:scale-105 transform transition-all duration-300 shadow-2xl flex items-center justify-center mx-auto">
+            <i class="fas fa-arrow-left mr-3 group-hover:-translate-x-1 transition-transform duration-300"></i>
+            Volver a la Página Anterior
+        </button>
+
+        <a th:href="@{/AgroNet}"
+           class="inline-block text-agro-light hover:text-white transition duration-300 group">
+            <i class="fas fa-home mr-2 group-hover:scale-110 transition-transform duration-300"></i>
+            Volver al Inicio
+        </a>
+    </div>
+
+    <!-- Mensaje de contacto -->
+    <div class="mt-12 pt-6 border-t border-agro-light/20">
+        <p class="text-agro-light text-sm">
+            ¿Tienes preguntas?
+            <a href="mailto:soporte@agronet.com" class="text-white hover:text-agro-light underline transition duration-300">
+                Contáctanos
+            </a>
+        </p>
+    </div>
+</div>
+
+<!-- Footer decorativo -->
+<div class="absolute bottom-4 left-0 right-0 text-center">
+    <p class="text-agro-light/50 text-sm flex items-center justify-center">
+        <i class="fas fa-heart text-agro-highlight/50 mr-2"></i>
+        Hecho con amor para la comunidad AgroNet
+    </p>
+</div>
+
+<!-- Scripts-->
+<script>
+
+    // Efecto de escritura para el título (opcional)
+    const title = document.querySelector('h1 span');
+    const originalText = title.textContent;
+    title.textContent = '';
+    let i = 0;
+
+    function typeWriter() {
+        if (i < originalText.length) {
+            title.textContent += originalText.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+
+    // Iniciar efecto de escritura después de un breve delay
+    setTimeout(typeWriter, 1000);
+</script>
+</body>
+</html>

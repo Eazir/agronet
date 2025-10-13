@@ -4,47 +4,75 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8310037b-193f-499d-8ff3-bd0ee7f9c388" name="Changes" comment="Modificacion de entidades:&#10;se corrigieron las relaciones entre tablas, se especifico el:">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="8310037b-193f-499d-8ff3-bd0ee7f9c388" name="Changes" comment="** Se agrego: **&#10;-Paginas de: &#10;  - login&#10;  - registro&#10;  - auth&#10;&#10;-Controlador de navegacion: NavegacionController.java&#10;-controlador de autenticacion: AuthController.java&#10;&#10;&#10;&#10;&#10;nuevo: el login sirve&#10;&#10;** Se configuro: **&#10;-se pueden registrar usuarios productores.&#10;&#10;-se habilito la navegacion en:&#10;  - autenticacion &#10;  - registro&#10;  - login de productores (el login falta por configurarse).&#10;&#10;-las pestañas y funciones no habilitadas se muestran con una interfaz de &quot;En contruccion&quot;.&#10;&#10;-el registro de usuario valida los datos para poder crear los usuarios y muestra los errores, al ser exitoso redirige al login y muestra que fue un registro exitoso.">
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/AuthService/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/AuthService/AuthServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/UsersService/UserServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Services/UsersService/UsersService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Consumidor/mi-perfilC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Consumidor/panel-controlC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Productor/mi-perfilP.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Productor/panel-controlP.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd48636d-4acd-433c-b21e-ebe10f0d5fa6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd48636d-4acd-433c-b21e-ebe10f0d5fa6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Carrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/CategoriaProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/CategoriaProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Donaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Donaciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoCarrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoCarrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/ProductoPedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Proyectos.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/Proyecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/StockProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/StockProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/TipoDocumento.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/TipoDocumento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioConsumidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioConsumidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioProductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/entidades/UsuarioProductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models/DTOs/UsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/UsuarioConsumidorCrudRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Repositorys/UsuarioConsumidorCrudRep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Consumidor/loginC.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Consumidor/registroC.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Productor/loginP.html" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/Productor/registroP.html" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/registro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/auth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AgroNet-B/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Features/entidades" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Eazir&quot;
+    &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Eazir/agronet.git&quot;,
     &quot;accountId&quot;: &quot;bbab4e0a-dc28-4204-a9a2-5244d78158cb&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;Eazir&quot;,
+    &quot;repository&quot;: &quot;agronet&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -58,44 +86,62 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="33DHHpr0CWdOAY5YGxUWS9vHuet" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AgroNetBApplication.executor&quot;: &quot;Run&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Features/entidades&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/INFO-PC/Documentos/Univesidad/Semestre 6/Software 2/AgroNet/AgroNet-B/src/main/java/com/tyrservices/agronetb/Models&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.AgroNetBApplication.executor": "Run",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Features/Services-Interfaces",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/INFO-PC/Documentos/Univesidad/Semestre 6/Software 2/AgroNet/AgroNet-B/src/main/resources/templates/Consumidor",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Models" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\templates\Consumidor" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\templates\Productor" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Services\ProyectosService" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Services\ProductosService" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\java\com\tyrservices\agronetb\Services\CarritoService" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\templates\Productor" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\templates" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\templates\consumidor" />
+      <recent name="D:\INFO-PC\Documentos\Univesidad\Semestre 6\Software 2\AgroNet\AgroNet-B\src\main\resources\static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tyrservices.agronetb.Controllers" />
+      <recent name="com.tyrservices.agronetb.Configs" />
       <recent name="com.tyrservices.agronetb.Models.entidades" />
     </key>
   </component>
@@ -112,8 +158,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
@@ -143,6 +189,26 @@
       <workItem from="1759413648990" duration="1781000" />
       <workItem from="1759446994224" duration="1592000" />
       <workItem from="1759501143470" duration="3296000" />
+      <workItem from="1759539274364" duration="108000" />
+      <workItem from="1759539651929" duration="626000" />
+      <workItem from="1759610372841" duration="466000" />
+      <workItem from="1759780815760" duration="2607000" />
+      <workItem from="1759800673679" duration="4073000" />
+      <workItem from="1760018649312" duration="458000" />
+      <workItem from="1760019739711" duration="342000" />
+      <workItem from="1760026679822" duration="1250000" />
+      <workItem from="1760038239361" duration="1097000" />
+      <workItem from="1760039750873" duration="7077000" />
+      <workItem from="1760050159916" duration="1058000" />
+      <workItem from="1760106711223" duration="9980000" />
+      <workItem from="1760122067871" duration="619000" />
+      <workItem from="1760122700293" duration="9802000" />
+      <workItem from="1760136426970" duration="6315000" />
+      <workItem from="1760145805064" duration="7230000" />
+      <workItem from="1760227770464" duration="18533000" />
+      <workItem from="1760279594673" duration="131000" />
+      <workItem from="1760294784231" duration="7757000" />
+      <workItem from="1760309257764" duration="10390000" />
     </task>
     <task id="LOCAL-00001" summary="Proyecto en blanco">
       <option name="closed" value="true" />
@@ -176,7 +242,31 @@
       <option name="project" value="LOCAL" />
       <updated>1759354528240</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Ajuste de repositorys&#10;- Se importaron Controllers&#10;- Se importaron servicios&#10;- se creo la home page (index)">
+      <option name="closed" value="true" />
+      <created>1760108093082</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760108093082</updated>
+    </task>
+    <task id="LOCAL-00006" summary="** Se agrego: **&#10;-Paginas de: &#10;  - login&#10;  - registro&#10;  - auth&#10;&#10;-Controlador de navegacion: NavegacionController.java&#10;-controlador de autenticacion: AuthController.java&#10;&#10;&#10;** Se configuro: **&#10;-se pueden registrar usuarios productores.&#10;&#10;-se habilito la navegacion en:&#10;  - autenticacion &#10;  - registro&#10;  - login de productores (el login falta por configurarse).&#10;&#10;-las pestañas y funciones no habilitadas se muestran con una interfaz de &quot;En contruccion&quot;.&#10;&#10;-el registro de usuario valida los datos para poder crear los usuarios y muestra los errores, al ser exitoso redirige al login y muestra que fue un registro exitoso.">
+      <option name="closed" value="true" />
+      <created>1760152966012</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1760152966012</updated>
+    </task>
+    <task id="LOCAL-00007" summary="** Se agrego: **&#10;-Paginas de: &#10;  - login&#10;  - registro&#10;  - auth&#10;&#10;-Controlador de navegacion: NavegacionController.java&#10;-controlador de autenticacion: AuthController.java&#10;&#10;&#10;&#10;&#10;nuevo: el login sirve&#10;&#10;** Se configuro: **&#10;-se pueden registrar usuarios productores.&#10;&#10;-se habilito la navegacion en:&#10;  - autenticacion &#10;  - registro&#10;  - login de productores (el login falta por configurarse).&#10;&#10;-las pestañas y funciones no habilitadas se muestran con una interfaz de &quot;En contruccion&quot;.&#10;&#10;-el registro de usuario valida los datos para poder crear los usuarios y muestra los errores, al ser exitoso redirige al login y muestra que fue un registro exitoso.">
+      <option name="closed" value="true" />
+      <created>1760236725035</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1760236725036</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +288,73 @@
     <MESSAGE value="prueba actualizacion de ramas" />
     <MESSAGE value="Importacion de entidades y DTOs" />
     <MESSAGE value="Modificacion de entidades:&#10;- CategoriaProducto&#10;- Producto&#10;- StockProducto&#10;- TipoDocumento&#10;- Usuarios&#10;&#10;Se modificarion tipos de datos, se eliminaron y agregaron datos en las entidades referentes a productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificacion de entidades:&#10;- CategoriaProducto&#10;- Producto&#10;- StockProducto&#10;- TipoDocumento&#10;- Usuarios&#10;&#10;Se modificarion tipos de datos, se eliminaron y agregaron datos en las entidades referentes a productos" />
+    <MESSAGE value="- Ajuste de repositorys&#10;- Se importaron Controllers&#10;- Se importaron servicios&#10;- se creo la home page (index)" />
+    <MESSAGE value="** Se agrego: **&#10;-Paginas de: &#10;  - login&#10;  - registro&#10;  - auth&#10;&#10;-Controlador de navegacion: NavegacionController.java&#10;-controlador de autenticacion: AuthController.java&#10;&#10;&#10;** Se configuro: **&#10;-se pueden registrar usuarios productores.&#10;&#10;-se habilito la navegacion en:&#10;  - autenticacion &#10;  - registro&#10;  - login de productores (el login falta por configurarse).&#10;&#10;-las pestañas y funciones no habilitadas se muestran con una interfaz de &quot;En contruccion&quot;.&#10;&#10;-el registro de usuario valida los datos para poder crear los usuarios y muestra los errores, al ser exitoso redirige al login y muestra que fue un registro exitoso." />
+    <MESSAGE value="** Se agrego: **&#10;-Paginas de: &#10;  - login&#10;  - registro&#10;  - auth&#10;&#10;-Controlador de navegacion: NavegacionController.java&#10;-controlador de autenticacion: AuthController.java&#10;&#10;&#10;&#10;&#10;nuevo: el login sirve&#10;&#10;** Se configuro: **&#10;-se pueden registrar usuarios productores.&#10;&#10;-se habilito la navegacion en:&#10;  - autenticacion &#10;  - registro&#10;  - login de productores (el login falta por configurarse).&#10;&#10;-las pestañas y funciones no habilitadas se muestran con una interfaz de &quot;En contruccion&quot;.&#10;&#10;-el registro de usuario valida los datos para poder crear los usuarios y muestra los errores, al ser exitoso redirige al login y muestra que fue un registro exitoso." />
+    <option name="LAST_COMMIT_MESSAGE" value="** Se agrego: **&#10;-Paginas de: &#10;  - login&#10;  - registro&#10;  - auth&#10;&#10;-Controlador de navegacion: NavegacionController.java&#10;-controlador de autenticacion: AuthController.java&#10;&#10;&#10;&#10;&#10;nuevo: el login sirve&#10;&#10;** Se configuro: **&#10;-se pueden registrar usuarios productores.&#10;&#10;-se habilito la navegacion en:&#10;  - autenticacion &#10;  - registro&#10;  - login de productores (el login falta por configurarse).&#10;&#10;-las pestañas y funciones no habilitadas se muestran con una interfaz de &quot;En contruccion&quot;.&#10;&#10;-el registro de usuario valida los datos para poder crear los usuarios y muestra los errores, al ser exitoso redirige al login y muestra que fue un registro exitoso." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.NotReadablePropertyException" package="org.springframework.beans" />
+          <option name="timeStamp" value="25" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/AuthController.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/AuthController.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/AuthController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java</url>
+          <line>141</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AgroNet-B/src/main/java/com/tyrservices/agronetb/Controllers/NavegacionController.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
