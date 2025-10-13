@@ -29,7 +29,7 @@
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
-                <a th:href="${tieneId} ? @{/AgroNet{userId}(userId=${userId})} : @{/AgroNet}"
+                <a th:href="@{/AgroNet}"
                    class="text-white font-bold text-2xl flex items-center">
                     <i class="fas fa-seedling text-agro-light mr-2"></i>
                     AgroNet
@@ -39,23 +39,23 @@
             <!-- Menú para desktop -->
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
-                    <a th:href="${tieneId} ? @{/productos{userId}(userId=${userId})} : @{/productos}"
+                    <a th:href="${isLog} ? @{/productos} : @{/auth}"
                        class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                         <i class="fas fa-apple-alt mr-1"></i> Productos
                     </a>
-                    <a th:href="${tieneId} ? @{/proyectos{userId}(userId=${userId})} : @{/proyectos}"
+                    <a th:href="${isLog} ? @{/proyectos} : @{/auth}"
                        class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                         <i class="fas fa-hand-holding-heart mr-1"></i> Proyectos
                     </a>
-                    <a th:href="${tieneId} ? @{/carrito{userId}(userId=${userId})} : @{/carrito}"
+                    <a th:href="${isLog} ? @{/carrito} : @{/auth}"
                        class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                         <i class="fas fa-shopping-cart mr-1"></i> Carrito
                     </a>
-                    <a th:href="${tieneId} ? @{/pedidos{userId}(userId=${userId})} : @{/pedidos}"
+                    <a th:href="${isLog} ? @{/pedidos} : @{/auth}"
                        class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                         <i class="fas fa-clipboard-list mr-1"></i> Pedidos
                     </a>
-                    <a th:href="${tieneId} ? @{/Control-Panel{userId}(userId=${userId})} : @{/auth}" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                    <a th:href="${isLog} ? @{/panel-control} : @{/auth}" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
                         <i class="fas fa-user-circle mr-1"></i> Mi Panel
                     </a>
                 </div>
@@ -73,23 +73,23 @@
     <!-- Menú móvil -->
     <div id="mobile-menu" class="md:hidden hidden bg-agro-secondary">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a th:href="${tieneId} ? @{/productos{userId}(userId=${userId})} : @{/productos}"
+            <a th:href="${isLog} ? @{/productos} : @{/auth}"
                class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
                 <i class="fas fa-apple-alt mr-2"></i> Productos
             </a>
-            <a th:href="${tieneId} ? @{/proyectos{userId}(userId=${userId})} : @{/proyectos}"
+            <a th:href="${isLog} ? @{/proyectos} : @{/auth}"
                class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
                 <i class="fas fa-hand-holding-heart mr-2"></i> Proyectos
             </a>
-            <a th:href="${tieneId} ? @{/carrito{userId}(userId=${userId})} : @{/carrito}"
+            <a th:href="${isLog} ? @{/carrito} : @{/auth}"
                class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
                 <i class="fas fa-shopping-cart mr-2"></i> Carrito
             </a>
-            <a th:href="${tieneId} ? @{/pedidos{userId}(userId=${userId})} : @{/pedidos}"
+            <a th:href="${isLog} ? @{/pedidos} : @{/auth}"
                class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
                 <i class="fas fa-clipboard-list mr-2"></i> Pedidos
             </a>
-            <a th:href="${tieneId} ? @{/Control-Panel{userId}(userId=${userId})} : @{/auth}"
+            <a th:href="${isLog} ? @{/panel-control} : @{/auth}"
                class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
                 <i class="fas fa-user-circle mr-2"></i> Mi Panel
             </a>
@@ -111,11 +111,11 @@
             eliminando intermediarios y garantizando precios justos para todos.
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <a th:href="${tieneId} ? @{/productos{userId}(userId=${userId})} : @{/productos}"
+            <a th:href="${isLog} ? @{/productos} : @{/auth}"
                class="bg-agro-light text-agro-primary font-bold py-3 px-8 rounded-lg hover:bg-white transition duration-300 transform hover:scale-105">
                 <i class="fas fa-shopping-basket mr-2"></i> Comprar Productos
             </a>
-            <a th:href="${tieneId} ? @{/proyectos{userId}(userId=${userId})} : @{/proyectos}"
+            <a th:href="${isLog} ? @{/proyectos} : @{/auth}"
                class="bg-transparent border-2 border-agro-light text-agro-light font-bold py-3 px-8 rounded-lg hover:bg-agro-light hover:text-agro-primary transition duration-300">
                 <i class="fas fa-hand-holding-usd mr-2"></i> Apoyar Proyectos
             </a>
@@ -168,7 +168,7 @@
                     Como consumidor, puedes convertirte en patrocinador de estos proyectos y recibir
                     recompensas exclusivas mientras ayudas a impulsar la agricultura local.
                 </p>
-                <a th:href="${tieneId} ? @{/proyectos{userId}(userId=${userId})} : @{/proyectos}"
+                <a th:href="${isLog} ? @{/proyectos} : @{/auth}"
                    class="inline-block bg-agro-light text-agro-primary font-bold py-3 px-6 rounded-lg hover:bg-white transition duration-300">
                     <i class="fas fa-rocket mr-2"></i> Descubre Proyectos
                 </a>
@@ -209,7 +209,7 @@
             interesado en productos frescos y apoyar la agricultura local, AgroNet es tu plataforma.
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <a th:href="${tieneId} ? @{/Control-Panel{userId}(userId=${userId})} : @{/auth}"
+            <a th:href="${isLog} ? @{/panel-control} : @{/auth}"
                class="bg-agro-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-agro-secondary transition duration-300">
                 <i class="fas fa-user-plus mr-2"></i> Regístrate Gratis
             </a>

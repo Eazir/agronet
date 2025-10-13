@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - AgroNet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'agro-primary': '#0e4a56',
+                        'agro-secondary': '#0d6971',
+                        'agro-accent': '#0a9798',
+                        'agro-highlight': '#06d9cc',
+                        'agro-light': '#0ffff7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<!-- Menú de Navegación Responsive -->
+<nav class="bg-agro-primary shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a th:href="@{/AgroNet}" class="text-white font-bold text-2xl flex items-center">
+                    <i class="fas fa-seedling text-agro-light mr-2"></i>
+                    AgroNet
+                </a>
+            </div>
+
+            <!-- Menú desktop -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a th:href="@{/AgroNet}" class="text-agro-light hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-home mr-1"></i> Inicio
+                    </a>
+                    <a th:href="@{/logou}" class="text-white hover:bg-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-sign-out-alt mr-1"></i> Cerrar Sesión
+                    </a>
+                </div>
+            </div>
+
+            <!-- Botón móvil -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white hover:text-agro-light focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="md:hidden hidden bg-agro-secondary">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a th:href="@{/AgroNet}" class="text-agro-light block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-home mr-2"></i> Inicio
+            </a>
+            <a th:href="@{/logou}" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-sign-out-alt mr-2"></i> Cerrar Sesión
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido Principal -->
+<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <!-- Header del Panel -->
+    <div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div class="mb-4 sm:mb-0">
+                <h1 class="text-2xl sm:text-3xl font-bold text-agro-primary">
+                    <i class="fas fa-tachometer-alt mr-2 sm:mr-3"></i>Panel de Control
+                </h1>
+                <p class="text-agro-secondary text-base sm:text-lg mt-2">
+                    ¡Bienvenido, <span class="font-semibold" th:text="${userName}">Usuario</span>!
+                </p>
+            </div>
+            <div class="bg-agro-light text-agro-primary px-3 py-1 sm:px-4 sm:py-2 rounded-full text-sm sm:text-base">
+                <i class="fas fa-user-tie mr-1 sm:mr-2"></i>Productor
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid de Opciones Responsive -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+        <!-- Mis Productos -->
+        <a th:href="@{/mis-productos}" class="bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition duration-300 transform hover:scale-105 border-2 border-transparent hover:border-agro-highlight">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-agro-primary to-agro-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <i class="fas fa-apple-alt text-white text-2xl sm:text-3xl"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-agro-primary mb-1 sm:mb-2">Mis Productos</h3>
+            <p class="text-gray-600 text-xs sm:text-sm">Gestiona y publica tus productos</p>
+        </a>
+
+        <!-- Mis Proyectos -->
+        <a th:href="@{/mis-proyectos}" class="bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition duration-300 transform hover:scale-105 border-2 border-transparent hover:border-agro-highlight">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-agro-secondary to-agro-highlight rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <i class="fas fa-project-diagram text-white text-2xl sm:text-3xl"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-agro-primary mb-1 sm:mb-2">Mis Proyectos</h3>
+            <p class="text-gray-600 text-xs sm:text-sm">Administra proyectos impulsadores</p>
+        </a>
+
+        <!-- Pedidos -->
+        <a th:href="@{/pedidos}" class="bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition duration-300 transform hover:scale-105 border-2 border-transparent hover:border-agro-highlight">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-agro-accent to-agro-light rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <i class="fas fa-clipboard-list text-white text-2xl sm:text-3xl"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-agro-primary mb-1 sm:mb-2">Pedidos</h3>
+            <p class="text-gray-600 text-xs sm:text-sm">Revisa y gestiona pedidos</p>
+        </a>
+
+        <!-- Mi Perfil -->
+        <a th:href="@{/mi-perfil}" class="bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition duration-300 transform hover:scale-105 border-2 border-transparent hover:border-agro-highlight">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-agro-highlight to-agro-light rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <i class="fas fa-user-cog text-white text-2xl sm:text-3xl"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-agro-primary mb-1 sm:mb-2">Mi Perfil</h3>
+            <p class="text-gray-600 text-xs sm:text-sm">Configura tu cuenta</p>
+        </a>
+
+    </div>
+
+    <!-- Estadísticas Rápidas Responsive -->
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div class="bg-gradient-to-r from-agro-primary to-agro-secondary text-white rounded-lg p-4 sm:p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-agro-light text-xs sm:text-sm">Productos Activos</p>
+                    <p class="text-xl sm:text-2xl font-bold">12</p>
+                </div>
+                <i class="fas fa-box-open text-2xl sm:text-3xl text-agro-light"></i>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-agro-accent to-agro-highlight text-white rounded-lg p-4 sm:p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-agro-light text-xs sm:text-sm">Pedidos del Mes</p>
+                    <p class="text-xl sm:text-2xl font-bold">8</p>
+                </div>
+                <i class="fas fa-shopping-cart text-2xl sm:text-3xl text-agro-light"></i>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-agro-highlight to-agro-light text-agro-primary rounded-lg p-4 sm:p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-agro-secondary text-xs sm:text-sm">Proyectos Activos</p>
+                    <p class="text-xl sm:text-2xl font-bold">2</p>
+                </div>
+                <i class="fas fa-rocket text-2xl sm:text-3xl text-agro-secondary"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Acciones Rápidas Responsive -->
+    <div class="mt-6 bg-white rounded-lg shadow-lg p-4 sm:p-6">
+        <h2 class="text-lg sm:text-xl font-semibold text-agro-primary mb-3 sm:mb-4">Acciones Rápidas</h2>
+        <div class="flex flex-wrap gap-2 sm:gap-4">
+            <a th:href="@{/agregar-producto}" class="bg-agro-primary text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-agro-secondary transition duration-300 text-sm sm:text-base">
+                <i class="fas fa-plus mr-1 sm:mr-2"></i>Agregar Producto
+            </a>
+            <a th:href="@{/crear-proyecto}" class="bg-agro-accent text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-agro-highlight transition duration-300 text-sm sm:text-base">
+                <i class="fas fa-rocket mr-1 sm:mr-2"></i>Crear Proyecto
+            </a>
+            <a th:href="@{/estadisticas}" class="bg-agro-light text-agro-primary px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-white transition duration-300 text-sm sm:text-base">
+                <i class="fas fa-chart-bar mr-1 sm:mr-2"></i>Estadísticas
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Script para el menú móvil -->
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
