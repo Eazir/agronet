@@ -1,34 +1,34 @@
-/*
+
 package com.tyrservices.agronetb.Services.ProductosService;
 
-import com.campofrescobackend.modelos.DTOs.productoUpdateDTO;
-import com.campofrescobackend.modelos.DTOs.stockProductosUpdateDTO;
-import com.campofrescobackend.modelos.DTOs.unidadesStockDTO;
-import com.campofrescobackend.modelos.entidades.Producto;
-import com.campofrescobackend.modelos.entidades.StockProducto;
+
+import com.tyrservices.agronetb.Models.DTOs.productoUpdateDTO;
+import com.tyrservices.agronetb.Models.DTOs.stockProductosUpdateDTO;
+import com.tyrservices.agronetb.Models.DTOs.unidadesStockDTO;
+import com.tyrservices.agronetb.Models.entidades.Producto;
+import com.tyrservices.agronetb.Models.entidades.StockProducto;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ProductoService {
 
-    //Seccion de los servicios de productos
 
+    // Métodos Producto
     List<Producto> getAllProducto();
-    List<Producto> getAllByProductor(int idProductor);
-    List<Producto> getAllByCategoria(int idCategoria);
-    List<Producto> getAllByNombreProducto(String nombreProducto);
+    List<Producto> getAllByProductor(Long idProductor);
+    List<Producto> getAllByCategoria(Long idCategoria);
+    List<Producto> getAllByNombreProducto(String nombre);
+    Optional<Producto> getProductoById(Long id);
     boolean postNewProducto(Producto producto);
-    Producto upDateProducto(int p_code, productoUpdateDTO producto);
-    boolean deleteProducto(int p_code);
+    Producto upDateProducto(Long codigo_producto, Producto producto);
+    boolean deleteProducto(Long codigo_producto);
 
-    //Seccion de los servicios de stock
-
+    // Métodos Stock
     List<StockProducto> getAllStock();
-    Optional<StockProducto> getStockByProducto(int p_code);
-    unidadesStockDTO getUnidadesStock(int p_code);
-    boolean postNewStockProducto(StockProducto stockProducto);
-    StockProducto upDateStockProducto(int p_code, stockProductosUpdateDTO stockProducto);
-    boolean deleteStockProducto(int p_code);
+    Optional<StockProducto> getStockByProducto(Long codigo_producto);
+    boolean postNewStockProducto(StockProducto stock);
+    void actualizarStockProducto(StockProducto stock);
+    boolean deleteStockProducto(Long codigo_producto);
 }
-*/
+

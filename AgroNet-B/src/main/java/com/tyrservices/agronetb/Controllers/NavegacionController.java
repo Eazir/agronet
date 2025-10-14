@@ -95,18 +95,21 @@ public class NavegacionController {
         model.addAttribute("userName", userName);
         model.addAttribute("userEmail", email);
 
+        try {
+            if (tipo.equals("1")) {
+                Optional<UsuarioProductor> productorOpt = usuarioProductorCrudRep.findById(userId);
 
-        if (tipo.equals("1")) {
-            Optional<UsuarioProductor> productorOpt = usuarioProductorCrudRep.findById(userId);
+                if (productorOpt.isPresent()) {
+                    model.addAttribute("usuario", productorOpt.get());
+                    model.addAttribute("tipoDocumento", productorOpt.get().getCodigoDoc().getNombreDoc());
 
-            if (productorOpt.isPresent()) {
-                model.addAttribute("usuario", productorOpt.get());
-                model.addAttribute("tipoDocumento", productorOpt.get().getCodigoDoc().getNombreDoc());
-
-                return "Productor/mi-perfilP";
+                    return "Productor/mi-perfilP";
+                }
             }
+        }catch (Exception e){
+            return "auth";
         }
-        return "auth";
+        return "redirect:auth";
     }
 
     @PostMapping("/actualizar-perfil")
