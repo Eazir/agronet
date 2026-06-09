@@ -42,6 +42,9 @@ public class Producto {
     @Column(name = "descripcion", length = 500)
     private String descripcion;
 
+    @Column(name = "estado", nullable = false)
+    private boolean estado;
+
     @Column(name = "url_imagen", length = 1000)
     private String urlImagen;
 

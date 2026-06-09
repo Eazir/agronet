@@ -8,7 +8,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ProductoCrudRep extends JpaRepository<Producto, Long> {
-    List<Producto> findProductosByCodigoCategoria(CategoriaProducto codigoCategoria);
-    List<Producto> findProductosByDocProductor(UsuarioProductor docProductor);
+
     List<Producto> findByNombreProductoContainingIgnoreCase(String nombreProducto);
+
+
+    List<Producto> findProductosByDocProductor_DocProductor(Long idProductor);
+
+    List<Producto> findProductosByCodigoCategoria_CodigoCategoria(Long idCategoria);
 }
