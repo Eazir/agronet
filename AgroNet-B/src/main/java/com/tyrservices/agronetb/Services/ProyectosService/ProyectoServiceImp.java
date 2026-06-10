@@ -1,163 +1,81 @@
-/*
 package com.tyrservices.agronetb.Services.ProyectosService;
 
-import com.campofrescobackend.modelos.DTOs.proyectoDonacionesUpdateDTO;
-import com.campofrescobackend.modelos.DTOs.proyectoInfoUpdateDTO;
-import com.campofrescobackend.modelos.entidades.Proyectos;
-import com.campofrescobackend.repositorio.ProyectoCrudRep;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.tyrservices.agronetb.Models.entidades.Proyecto;
+import com.tyrservices.agronetb.Models.entidades.UsuarioProductor;
+import com.tyrservices.agronetb.Repositorys.ProyectoCrudRep;
+import com.tyrservices.agronetb.Repositorys.UsuarioProductorCrudRep;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProyectoServiceImp implements ProyectoService{
-    //Implementaciones
-    private final ProyectoCrudRep proyectoCrudRep;
+public class ProyectoServiceImp implements ProyectoService {
 
-    @Autowired
-    public ProyectoServiceImp(
-            ProyectoCrudRep proyectoCrudRep) {
+    private final ProyectoCrudRep proyectoCrudRep;
+    private final UsuarioProductorCrudRep usuarioProductorCrudRep;
+
+    public ProyectoServiceImp(ProyectoCrudRep proyectoCrudRep,
+                              UsuarioProductorCrudRep usuarioProductorCrudRep) {
         this.proyectoCrudRep = proyectoCrudRep;
+        this.usuarioProductorCrudRep = usuarioProductorCrudRep;
     }
 
-    //Get´s
-
-    */
-/**
-     * Obtener todos los proyectos
-     * @return : lista con todos los productos que encuentre
-     *//*
-
     @Override
-    public List<Proyectos> getAllProyectos() {
+    public List<Proyecto> getAllProyectos() {
         return proyectoCrudRep.findAll();
     }
 
-    */
-/**
-     * Obtener todos los proyectos de un usuario productor
-     * @param idProductor : recibe el ID del productor
-     * @return lista con todos los productos del usuario productor
-     *//*
-
     @Override
-    public  List<Proyectos> getProyectosByProductor(int idProductor) {
-        return proyectoCrudRep.findProyectosByDocProductor(idProductor);
+    public List<Proyecto> getProyectosByProductor(Long idProductor) {
+        Optional<UsuarioProductor> productorOpt = usuarioProductorCrudRep.findById(idProductor);
+        if (productorOpt.isEmpty()) {
+            return List.of();
+        }
+        return proyectoCrudRep.findProyectosByDocProductor(productorOpt.get());
     }
 
-    */
-/**
-     * Obtener todos los proyectos que contengan un nombre en particular
-     * @param nombreProyecto : recibe el nombre del proyecto
-     * @return todos los proyectos que contengan el nombre proporcionado
-     *//*
-
     @Override
-    public List<Proyectos> getProyectosByNombre(String nombreProyecto) {
-        return proyectoCrudRep.findProyectosByNombreProyectoContainingIgnoreCase(nombreProyecto);
+    public Optional<Proyecto> getProyectoById(Long id) {
+        return proyectoCrudRep.findById(id);
     }
 
-
-    //POSTs
-
-    */
-/**
-     * Crear un nuevo proyecto en el sistema
-     *
-     * @param proyectos : recibe el proyecto a guardar
-     * @return el proyecto guardado
-     *//*
-
     @Override
-    public boolean postNewProyecto(Proyectos proyectos){
+    public boolean postNewProyecto(Proyecto proyecto) {
         try {
-            proyectoCrudRep.save(proyectos);
+            proyectoCrudRep.save(proyecto);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
 
-
-    //PUTs-PATCHs
-
-    */
-/**
-     * Actualiza la información de un proyecto del sistema
-     * @param pr_code : recibe el ID del producto a actualizar
-     * @param dto : recibe el producto con los datos a actualizar
-     * @return el proyecto con sus datos actualizados
-     *//*
-
     @Override
-    public Proyectos upDateInfoProyecto(int pr_code, proyectoInfoUpdateDTO dto){
-        Optional<Proyectos> proyectos = proyectoCrudRep.findById(pr_code);
-        if (proyectos.isEmpty()){
+    public Proyecto upDateProyecto(Long id, Proyecto proyectoActualizado) {
+        Optional<Proyecto> proyectoOpt = proyectoCrudRep.findById(id);
+        if (proyectoOpt.isEmpty()) {
             return null;
         }
 
-        if(dto.getNombreProyecto() != null){
-            proyectos.get().setNombreProyecto(dto.getNombreProyecto());
-        }
-        if(dto.getDescripcion() != null){
-            proyectos.get().setDescripcion(dto.getDescripcion());
-        }
-        if(dto.getMeta() != null){
-            proyectos.get().setMeta(dto.getMeta());
-        }
-        if(dto.getUrlImagen() != null){
-            proyectos.get().setUrlImagen(dto.getUrlImagen());
-        }
-        return proyectoCrudRep.save( proyectos.get());
-    }
+        Proyecto existente = proyectoOpt.get();
+        existente.setNombreProyecto(proyectoActualizado.getNombreProyecto());
+        existente.setDescripcion(proyectoActualizado.getDescripcion());
+        existente.setMeta(proyectoActualizado.getMeta());
+        existente.setUrlImagen(proyectoActualizado.getUrlImagen());
 
-    */
-/**
-     * Actualiza la información de donaciones de un proyecto del sistema
-     * @param pr_code : recibe el ID del producto a actualizar
-     * @param pr : recibe el producto con los datos a actualizar
-     * @return el proyecto con sus datos acerca de donaciones actualizados
-     *//*
+        return proyectoCrudRep.save(existente);
+    }
 
     @Override
-    public Proyectos upDateProgresoProyecto(int pr_code, proyectoDonacionesUpdateDTO pr){
-        Proyectos proyectos = proyectoCrudRep.findById(pr_code).isPresent()?
-                proyectoCrudRep.findById(pr_code).get():
-                null;
-        if(proyectos != null){
-            if(pr.getRecaudado() != null){
-                proyectos.setRecaudado(pr.getRecaudado());
-            }
-            if(pr.getDonacionesRecibidas() != null){
-                proyectos.setDonacionesRecibidas(pr.getDonacionesRecibidas());
-            }
-            return proyectoCrudRep.saveAndFlush(proyectos);
-        }else {
-            return null;
+    public boolean deleteProyecto(Long id) {
+        if (proyectoCrudRep.findById(id).isEmpty()) {
+            return false;
         }
-    }
-
-
-    //DELETEs
-
-    */
-/**
-     * Elimina un producto del sistema
-     * @param pr_code: recibe el ID del producto a eliminar
-     * @return true si se eliminó el producto, false en caso contrario
-     *//*
-
-    public boolean deleteProyecto(int pr_code) {
-        Proyectos proyectos = proyectoCrudRep.findById(pr_code).isPresent() ?
-                proyectoCrudRep.findById(pr_code).get() : null;
-        if (proyectos != null) {
-            proyectoCrudRep.delete(proyectos);
+        try {
+            proyectoCrudRep.deleteById(id);
             return true;
-        }else{
+        } catch (Exception e) {
             return false;
         }
     }
-
-}*/
+}

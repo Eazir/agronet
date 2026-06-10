@@ -61,7 +61,31 @@ public class UserServiceImp implements UsersService{
 
 
     @Override
-    public boolean actualizarConsumidor(UsuarioConsumidor usurioAct) {
+    public boolean actualizarConsumidor(UsuarioConsumidor usuarioAct) {
+        UsuarioConsumidor existente = usuarioConsumidorCrudRep.findById(usuarioAct.getDocConsumidor())
+                .orElseThrow(() -> new RuntimeException("Consumidor no encontrado"));
+
+        existente.setTipoUsuario(usuarioAct.getTipoUsuario());
+        existente.setCodigoDoc(usuarioAct.getCodigoDoc());
+        existente.setNombreUsuario(usuarioAct.getNombreUsuario());
+        existente.setEmail(usuarioAct.getEmail());
+
+        usuarioConsumidorCrudRep.save(existente);
+        return true;
+    }
+
+    @Override
+    public boolean cambiarContraseñaC(Long userId, String currentPassword, String newPassword) {
+        Optional<UsuarioConsumidor> consumidorOpt = usuarioConsumidorCrudRep.findById(userId);
+
+        if (consumidorOpt.isPresent()) {
+            UsuarioConsumidor consumidor = consumidorOpt.get();
+            if (consumidor.getContraseña().equals(currentPassword)) {
+                consumidor.setContraseña(newPassword);
+                usuarioConsumidorCrudRep.save(consumidor);
+                return true;
+            }
+        }
         return false;
     }
 }

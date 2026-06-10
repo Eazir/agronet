@@ -32,15 +32,36 @@ public class ProductoController {
         this.categoriaService = categoriaProductoCrudRep;
     }
 
+    @GetMapping("/productos-disponibles")
+    public String productosDisponibles(HttpSession session, Model model) {
+        Long userId = (Long) session.getAttribute("userId");
+        if (userId == null) {
+            return "redirect:/login2";
+        }
+
+        try {
+            List<Producto> productos = productoService.getAllActiveProductos();
+            model.addAttribute("productos", productos);
+            model.addAttribute("categorias", categoriaService.findAll());
+
+            model.addAttribute("isLoggedIn", true);
+            model.addAttribute("userId", userId);
+            model.addAttribute("userName", session.getAttribute("userName"));
+        } catch (Exception e) {
+            model.addAttribute("error", "Error al cargar los productos");
+        }
+
+        return "Consumidor/productosC";
+    }
+
     @GetMapping("/mis-productos")
     public String misProductos(HttpSession session, Model model) {
         Long userId = (Long) session.getAttribute("userId");
         if (userId == null) {
-            return "redirect:/login";
+            return "redirect:/auth";
         }
 
         try {
-            // Obtener productos del usuario
             List<Producto> productos = productoService.getAllByProductor(userId);
             model.addAttribute("productos", productos);
             model.addAttribute("categorias", categoriaService.findAll());
@@ -61,7 +82,7 @@ public class ProductoController {
     public String mostrarFormularioCrear(HttpSession session, Model model) {
         Long userId = (Long) session.getAttribute("userId");
         if (userId == null) {
-            return "redirect:/login1";
+            return "redirect:/auth";
         }
 
         model.addAttribute("producto", new Producto());
@@ -80,7 +101,7 @@ public class ProductoController {
 
         Long userId = (Long) session.getAttribute("userId");
         if (userId == null) {
-            return "redirect:/login";
+            return "redirect:/auth";
         }
 
         try {
@@ -114,7 +135,7 @@ public class ProductoController {
     public String editarProducto(@PathVariable Long id, HttpSession session, Model model) {
         Long userId = (Long) session.getAttribute("userId");
         if (userId == null) {
-            return "redirect:/login";
+            return "redirect:/auth";
         }
 
         Optional<Producto> productoOpt = productoService.getProductoById(id);
@@ -145,7 +166,7 @@ public class ProductoController {
 
         Long userId = (Long) session.getAttribute("userId");
         if (userId == null) {
-            return "redirect:/login";
+            return "redirect:/auth";
         }
 
         try {
@@ -188,7 +209,7 @@ public class ProductoController {
 
         Long userId = (Long) session.getAttribute("userId");
         if (userId == null) {
-            return "redirect:/login";
+            return "redirect:/auth";
         }
 
         try {

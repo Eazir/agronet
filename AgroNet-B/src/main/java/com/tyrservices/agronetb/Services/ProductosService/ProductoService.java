@@ -19,6 +19,7 @@ public interface ProductoService {
     List<Producto> getAllByProductor(Long idProductor);
     List<Producto> getAllByCategoria(Long idCategoria);
     List<Producto> getAllByNombreProducto(String nombre);
+    List<Producto> getAllActiveProductos();
     Optional<Producto> getProductoById(Long id);
     boolean postNewProducto(Producto producto);
     Producto upDateProducto(Long codigo_producto, Producto producto);

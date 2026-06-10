@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Disponibles - AgroNet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'agro-primary': '#0e4a56',
+                        'agro-secondary': '#0d6971',
+                        'agro-accent': '#0a9798',
+                        'agro-highlight': '#06d9cc',
+                        'agro-light': '#0ffff7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<nav class="bg-agro-primary shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0 flex items-center">
+                <a th:href="@{/AgroNet}" class="text-white font-bold text-2xl flex items-center">
+                    <i class="fas fa-seedling text-agro-light mr-2"></i>
+                    AgroNet
+                </a>
+            </div>
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a th:href="@{/AgroNet}" class="text-agro-light hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-home mr-1"></i> Inicio
+                    </a>
+                    <a th:href="@{/panel-control}" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-tachometer-alt mr-1"></i> Panel
+                    </a>
+                    <a th:href="@{/logou}" class="text-white hover:bg-red-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-sign-out-alt mr-1"></i> Cerrar Sesión
+                    </a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white hover:text-agro-light focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-agro-secondary">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a th:href="@{/AgroNet}" class="text-agro-light block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-home mr-2"></i> Inicio
+            </a>
+            <a th:href="@{/panel-control}" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-tachometer-alt mr-2"></i> Panel
+            </a>
+            <a th:href="@{/logou}" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-sign-out-alt mr-2"></i> Cerrar Sesión
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-bold text-agro-primary">
+                    <i class="fas fa-project-diagram mr-3"></i>Proyectos de Financiamiento
+                </h1>
+                <p class="text-agro-secondary mt-2">Apoya los proyectos de la comunidad agrícola</p>
+            </div>
+        </div>
+    </div>
+
+    <div th:if="${error}" class="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+        <p class="text-red-700 flex items-center">
+            <i class="fas fa-exclamation-triangle mr-2"></i>
+            <span th:text="${error}"></span>
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div th:each="proyecto : ${proyectos}"
+             class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
+            <div class="h-48 bg-gradient-to-br from-agro-secondary to-agro-highlight flex items-center justify-center overflow-hidden">
+                <img th:if="${proyecto.urlImagen}" th:src="${proyecto.urlImagen}"
+                     class="w-full h-full object-cover" th:alt="${proyecto.nombreProyecto}">
+                <i th:unless="${proyecto.urlImagen}" class="fas fa-project-diagram text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-bold text-gray-900 mb-2" th:text="${proyecto.nombreProyecto}">
+                    Nombre del Proyecto
+                </h3>
+                <p class="text-sm text-gray-500 mb-3 line-clamp-2" th:text="${proyecto.descripcion}">
+                    Descripción
+                </p>
+
+                <div class="mb-3">
+                    <div class="flex justify-between text-sm mb-1">
+                        <span class="text-gray-600">Recaudado</span>
+                        <span class="font-semibold text-agro-primary"
+                              th:text="'$' + ${#numbers.formatDecimal(proyecto.recaudado != null ? proyecto.recaudado : 0, 1, 2)}">
+                            $0
+                        </span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div th:if="${proyecto.meta != null && proyecto.meta > 0}"
+                             class="bg-gradient-to-r from-agro-primary to-agro-highlight h-2.5 rounded-full transition-all duration-500"
+                             th:style="'width: ' + ${proyecto.recaudado != null ?
+                             (proyecto.recaudado * 100) / proyecto.meta : 0} + '%'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between text-sm text-gray-500 mb-3">
+                    <span>
+                        <i class="fas fa-hand-holding-usd text-agro-accent mr-1"></i>
+                        Meta: <span class="font-semibold" th:text="'$' + ${#numbers.formatDecimal(proyecto.meta, 1, 2)}">$0</span>
+                    </span>
+                    <span>
+                        <i class="fas fa-users text-agro-accent mr-1"></i>
+                        <span th:text="${proyecto.donacionesRecibidas != null ? proyecto.donacionesRecibidas : 0}">0</span> donaciones
+                    </span>
+                </div>
+
+                <p class="text-xs text-gray-400">
+                    <i class="fas fa-user mr-1"></i>
+                    <span th:text="${proyecto.docProductor.nombreUsuario}">Productor</span>
+                </p>
+                <p class="text-xs text-gray-400">
+                    <i class="fas fa-calendar mr-1"></i>
+                    <span th:text="${#temporals.format(proyecto.fechaCreacion, 'dd/MM/yyyy')}">Fecha</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div th:if="${#lists.isEmpty(proyectos)}" class="text-center py-12">
+        <div class="flex flex-col items-center justify-center text-gray-500">
+            <i class="fas fa-inbox text-4xl mb-4 text-gray-300"></i>
+            <p class="text-lg font-medium mb-2">No hay proyectos disponibles</p>
+            <p class="text-sm">Vuelve pronto para ver nuevos proyectos</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

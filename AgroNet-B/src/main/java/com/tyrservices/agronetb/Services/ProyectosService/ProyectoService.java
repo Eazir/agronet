@@ -1,19 +1,15 @@
-/*
 package com.tyrservices.agronetb.Services.ProyectosService;
 
-import com.campofrescobackend.modelos.DTOs.proyectoDonacionesUpdateDTO;
-import com.campofrescobackend.modelos.DTOs.proyectoInfoUpdateDTO;
-import com.campofrescobackend.modelos.entidades.Proyectos;
+import com.tyrservices.agronetb.Models.entidades.Proyecto;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProyectoService {
-    List<Proyectos> getAllProyectos();
-    List<Proyectos> getProyectosByProductor(int idProductor);
-    List<Proyectos> getProyectosByNombre(String nombreProyecto);
-    boolean postNewProyecto(Proyectos proyectos);
-    Proyectos upDateInfoProyecto(int pr_code, proyectoInfoUpdateDTO n_proyecto);
-    Proyectos upDateProgresoProyecto(int pr_code, proyectoDonacionesUpdateDTO n_proyecto);
-    boolean deleteProyecto(int pr_code);
+    List<Proyecto> getAllProyectos();
+    List<Proyecto> getProyectosByProductor(Long idProductor);
+    Optional<Proyecto> getProyectoById(Long id);
+    boolean postNewProyecto(Proyecto proyecto);
+    Proyecto upDateProyecto(Long id, Proyecto proyecto);
+    boolean deleteProyecto(Long id);
 }
-*/

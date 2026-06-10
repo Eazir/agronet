@@ -135,7 +135,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-agro-light text-xs sm:text-sm">Productos Activos</p>
-                    <p class="text-xl sm:text-2xl font-bold">12</p>
+                    <p class="text-xl sm:text-2xl font-bold" th:text="${misProductos}">12</p>
                 </div>
                 <i class="fas fa-box-open text-2xl sm:text-3xl text-agro-light"></i>
             </div>
@@ -145,7 +145,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-agro-light text-xs sm:text-sm">Pedidos del Mes</p>
-                    <p class="text-xl sm:text-2xl font-bold">8</p>
+                    <p class="text-xl sm:text-2xl font-bold">0</p>
                 </div>
                 <i class="fas fa-shopping-cart text-2xl sm:text-3xl text-agro-light"></i>
             </div>
@@ -155,7 +155,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-agro-secondary text-xs sm:text-sm">Proyectos Activos</p>
-                    <p class="text-xl sm:text-2xl font-bold">2</p>
+                    <p class="text-xl sm:text-2xl font-bold" th:text="${misProyectos}">2</p>
                 </div>
                 <i class="fas fa-rocket text-2xl sm:text-3xl text-agro-secondary"></i>
             </div>

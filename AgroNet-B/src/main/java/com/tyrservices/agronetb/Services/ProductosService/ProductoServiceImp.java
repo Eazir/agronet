@@ -32,6 +32,11 @@ public class ProductoServiceImp implements ProductoService {
     }
 
     @Override
+    public List<Producto> getAllActiveProductos() {
+        return productoCrudRep.findByEstadoTrue();
+    }
+
+    @Override
     public List<Producto> getAllByProductor(Long idProductor) {
         return productoCrudRep.findProductosByDocProductor_DocProductor(idProductor);
     }

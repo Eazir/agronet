@@ -1,0 +1,40 @@
+services:
+
+  db:
+    image: mysql:8.0
+    container_name: agronet-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_051025
+      MYSQL_DATABASE: AgroNet
+      MYSQL_USER: Tyr
+      MYSQL_PASSWORD: Tyr_051025
+    ports:
+      - "3307:3306"
+    volumes:
+      - agronet_mysql_data:/var/lib/mysql
+      - ./docker/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "Tyr", "-pTyr_051025"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: agronet-app
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: AgroNet
+      DB_USER: Tyr
+      DB_PASSWORD: Tyr_051025
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  agronet_mysql_data:

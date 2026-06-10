@@ -9,6 +9,8 @@ import com.tyrservices.agronetb.Repositorys.UsuarioConsumidorCrudRep;
 import com.tyrservices.agronetb.Repositorys.UsuarioProductorCrudRep;
 import com.tyrservices.agronetb.Services.AuthService.AuthService;
 import com.tyrservices.agronetb.Services.AuthService.AuthServiceImp;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -67,23 +69,32 @@ public class AuthController {
             @RequestParam("password") String password,
             @PathVariable String tipo,
             HttpSession session,
+            HttpServletResponse response,
             RedirectAttributes redirectAttributes) {
 
-        return authService.login(username, password, tipo, session, redirectAttributes);
+        return authService.login(username, password, tipo, session, response, redirectAttributes);
     }
 
     @GetMapping("/logou")
     public String logout(HttpSession session,
+                         HttpServletResponse response,
                          RedirectAttributes redirectAttributes) {
         String tipo = (String) session.getAttribute("tipo");
-        // Invalidar la sesión
+
         session.invalidate();
 
-        // Mensaje de éxito
+        Cookie cookie = new Cookie("auth_token", null);
+        cookie.setHttpOnly(true);
+        cookie.setPath("/");
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+
         redirectAttributes.addFlashAttribute("success", "Sesión cerrada correctamente");
 
-        // Redirigir al login
-        return "redirect:/login" + tipo;
+        if (tipo != null) {
+            return "redirect:/login" + tipo;
+        }
+        return "redirect:/AgroNet";
     }
 
     @GetMapping("/registro{tipo}")

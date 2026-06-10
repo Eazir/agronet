@@ -7,4 +7,5 @@ public interface UsersService {
     boolean actualizarProductor(UsuarioProductor usuarioAct);
     boolean cambiarContraseñaP(Long userId, String currentPassword, String newPassword);
     boolean actualizarConsumidor(UsuarioConsumidor usurioAct);
+    boolean cambiarContraseñaC(Long userId, String currentPassword, String newPassword);
 }

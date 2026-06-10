@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Proyecto - AgroNet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'agro-primary': '#0e4a56',
+                        'agro-secondary': '#0d6971',
+                        'agro-accent': '#0a9798',
+                        'agro-highlight': '#06d9cc',
+                        'agro-light': '#0ffff7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<nav class="bg-agro-primary shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0 flex items-center">
+                <a th:href="@{/}" class="text-white font-bold text-2xl flex items-center">
+                    <i class="fas fa-seedling text-agro-light mr-2"></i>
+                    AgroNet
+                </a>
+            </div>
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a th:href="@{/AgroNet}" class="text-agro-light hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-home mr-1"></i> Inicio
+                    </a>
+                    <a th:href="@{/mis-proyectos}" class="text-white hover:bg-agro-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <i class="fas fa-arrow-left mr-1"></i> Volver a Proyectos
+                    </a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white hover:text-agro-light focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-agro-secondary">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a th:href="@{/AgroNet}" class="text-agro-light block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-home mr-2"></i> Inicio
+            </a>
+            <a th:href="@{/mis-proyectos}" class="text-white hover:bg-agro-primary block px-3 py-2 rounded-md text-base font-medium">
+                <i class="fas fa-arrow-left mr-2"></i> Volver a Proyectos
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <div class="flex items-center">
+            <div class="bg-agro-light text-agro-primary p-3 rounded-full mr-4">
+                <i class="fas fa-plus text-xl"></i>
+            </div>
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-bold text-agro-primary">Crear Nuevo Proyecto</h1>
+                <p class="text-agro-secondary mt-1">Crea un proyecto de financiamiento para tu comunidad</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg p-6">
+        <form th:action="@{/guardar-proyecto}" method="post" th:object="${proyecto}">
+
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <i class="fas fa-signature mr-2 text-agro-accent"></i>Nombre del Proyecto *
+                </label>
+                <input type="text"
+                       th:field="*{nombreProyecto}"
+                       required
+                       maxlength="100"
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300"
+                       placeholder="Ej: Fondo de semillas comunitario">
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <i class="fas fa-align-left mr-2 text-agro-accent"></i>Descripción
+                </label>
+                <textarea th:field="*{descripcion}"
+                          rows="4"
+                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300 resize-none"
+                          placeholder="Describe el objetivo de tu proyecto..."></textarea>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <i class="fas fa-dollar-sign mr-2 text-agro-accent"></i>Meta de Financiamiento *
+                </label>
+                <input type="number"
+                       th:field="*{meta}"
+                       required
+                       step="0.01"
+                       min="0"
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300"
+                       placeholder="Ej: 5000000">
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <i class="fas fa-image mr-2 text-agro-accent"></i>URL de la Imagen
+                </label>
+                <input type="url"
+                       th:field="*{urlImagen}"
+                       maxlength="1000"
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-agro-highlight focus:border-transparent transition duration-300"
+                       placeholder="https://ejemplo.com/imagen.jpg">
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200">
+                <button type="submit"
+                        class="bg-gradient-to-r from-agro-primary to-agro-accent text-white py-3 px-6 rounded-lg font-semibold hover:from-agro-secondary hover:to-agro-highlight transition duration-300 flex-1">
+                    <i class="fas fa-save mr-2"></i>Crear Proyecto
+                </button>
+                <a th:href="@{/mis-proyectos}"
+                   class="bg-gray-200 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-300 transition duration-300 text-center">
+                    <i class="fas fa-times mr-2"></i>Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <div class="mt-6 bg-agro-light border border-agro-highlight rounded-lg p-4">
+        <div class="flex items-start">
+            <i class="fas fa-info-circle text-agro-primary mt-1 mr-3"></i>
+            <div>
+                <h3 class="font-semibold text-agro-primary mb-2">Información importante</h3>
+                <ul class="text-sm text-agro-secondary space-y-1">
+                    <li>• Los campos marcados con * son obligatorios</li>
+                    <li>• La meta de financiamiento debe ser un valor positivo</li>
+                    <li>• El proyecto se creará con 0 donaciones recibidas</li>
+                    <li>• Los fondos recaudados se actualizarán automáticamente</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

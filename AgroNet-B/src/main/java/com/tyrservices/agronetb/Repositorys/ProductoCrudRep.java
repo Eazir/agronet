@@ -15,4 +15,6 @@ public interface ProductoCrudRep extends JpaRepository<Producto, Long> {
     List<Producto> findProductosByDocProductor_DocProductor(Long idProductor);
 
     List<Producto> findProductosByCodigoCategoria_CodigoCategoria(Long idCategoria);
+
+    List<Producto> findByEstadoTrue();
 }
