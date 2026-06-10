@@ -2,13 +2,15 @@
 
 Plataforma de comercio electrónico agropecuario que conecta productores y consumidores, eliminando intermediarios. Construida con **Java 17**, **Spring Boot 3.5**, **MySQL 8** y **Thymeleaf**.
 ---
-*USUARIOS EN LA DB*
-- CLIENTE:
+*USUARIOS DE PRUEBA YA EXISTENTES EN LA DB*
+- CLIENTE: 
   email: a@a.com
   pswr: 12345678
-- PODUCTOR
+- PODUCTOR: 
   email: d@d.com
   pswr: 12345678
+
+-(en cualquier caso se pueden crear nuevos usuarios)
 ---
 
 ## Tabla de Contenidos
